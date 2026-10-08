@@ -13,3 +13,10 @@ Object.defineProperty(window, "matchMedia", {
     dispatchEvent: () => {},
   }),
 });
+
+Object.defineProperty(navigator, "clipboard", {
+  writable: true,
+  value: {
+    writeText: jest.fn().resolved(undefined),
+  },
+});
